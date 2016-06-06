@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/title" />
+    <EditText
+        style="@style/myCustomEditText"
+        android:hint="@string/login"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/login"
+        android:layout_marginTop="102dp"
+        android:layout_below="@+id/app_bar"
+        android:layout_alignStart="@+id/app_bar" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        style="@style/myCustomEditText"
+        android:id="@+id/type"
+        android:entries="@array/type"
+        android:layout_below="@+id/login"
+        android:layout_alignStart="@+id/login" />
+    <EditText
+        style="@style/myCustomEditText"
+        android:hint="@string/parol"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/parol"
+        android:layout_below="@+id/type"
+        android:layout_alignStart="@+id/type" />
+    <Button
+        style="@style/myCustomButton"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/loginB"
+        android:id="@+id/loginButton"
+        android:focusable="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/parol" />
+
+</RelativeLayout>
