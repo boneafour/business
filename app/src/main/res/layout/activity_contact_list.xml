@@ -20,6 +20,24 @@
 
     <TextView
         android:text="Не заполнено "
+        android:id="@+id/adress"
+        android:paddingRight="30dp"
+        android:paddingLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#024E68" />
+
+    <TextView
+        android:text="Не заполнено "
+        android:id="@+id/organ"
+        android:paddingRight="30dp"
+        android:paddingLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#024E68" />
+
+    <TextView
+        android:text="Не заполнено "
         android:id="@+id/role"
         android:paddingRight="30dp"
         android:paddingLeft="10dp"
@@ -36,15 +54,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#024E68"/>
-
-    <TextView
-        android:text="Не заполнено "
-        android:id="@+id/email"
-        android:paddingRight="30dp"
-        android:paddingLeft="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#024E68" />
 
     <TextView
         android:text="Не заполнено "

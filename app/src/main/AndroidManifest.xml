@@ -15,56 +15,57 @@
             </intent-filter>
         </activity>
     <activity
-        android:name="Wash"
+        android:name=".Wash"
         android:screenOrientation="portrait">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="MainActivity" />
+            android:value=".MainActivity" />
     </activity>
     <activity
-        android:name="Contact"
+        android:name=".Contact"
         android:screenOrientation="portrait">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="MainActivity" />
+            android:value=".MainActivity" />
     </activity>
     <activity
-        android:name="Clean"
+        android:name=".Clean"
         android:screenOrientation="portrait">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="MainActivity" />
+            android:value=".MainActivity" />
     </activity>
 
     <activity
-        android:name="Cook"
+        android:name=".Cook"
         android:screenOrientation="portrait">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="MainActivity" />
+            android:value=".MainActivity" />
     </activity>
     <activity
-        android:name="Table"
+        android:name=".Table"
         android:screenOrientation="portrait">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="MainActivity" />
+            android:value=".MainActivity" />
     </activity>
 
     <activity
-        android:name="ContactList"
+        android:name=".ContactList"
         android:screenOrientation="portrait">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="Contact" />
+            android:value=".Contact" />
     </activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".MainActivity1"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Autorization" />
+        </activity>
 
-        <activity android:name=".Wash1"></activity>
-        <activity android:name=".Contact1"></activity>
-        <activity android:name=".Cook1"></activity>
-        <activity android:name=".Clean1"></activity>
 
     </application>
 

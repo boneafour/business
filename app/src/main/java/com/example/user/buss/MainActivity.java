@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 
         Intent intent = getIntent();
         type = intent.getStringExtra("typeS");
-        System.out.println(type);
+
 
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -49,12 +49,12 @@ public class MainActivity extends Activity {
                 else if(position==3){
                     startActivity(new Intent(MainActivity.this, Contact.class));
                 }
-                else if(position==4){
+                if(position==4 && type.equals("админ")){
 
                     startActivity(new Intent(MainActivity.this, Table.class));
-                    if(type=="клиент") {
-                       onWindowFocusChanged(false);
-                    }
+
+
+
                 }
 
 

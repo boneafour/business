@@ -13,7 +13,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 	// All Static variables
 	// Database Version
-	private static final int DATABASE_VERSION = 6;
+	private static final int DATABASE_VERSION = 9;
 
 	// Database Name
 	private static final String DATABASE_NAME = "contactsManager";
@@ -27,9 +27,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	//-------------Contacts--------------------
 	private static final String CONTACT_ID = "contact_id";
 	private static final String NAME = "contact_name";
+	private static final String ADRESS = "contact_adress";
+	private static final String ORGAN = "contact_organ";
 	private static final String ROLE = "contact_role";
 	private static final String PHONE = "contact_phone";
-	//private static final String EMAIL = "email";
 	private static final String COMMENT = "contact_comment";
 	//-------------Clean--------------------
 	private static final String CLEAN_ID = "clean_id";
@@ -66,6 +67,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
 				+ CONTACT_ID + " INTEGER PRIMARY KEY," + NAME + " TEXT,"
+				+ ADRESS +" TEXT,"
+				+ ORGAN +" TEXT,"
 				+ ROLE + " TEXT," + PHONE + " TEXT,"+ COMMENT + " TEXT" +  ")";
 		db.execSQL(CREATE_CONTACTS_TABLE);
 
@@ -112,9 +115,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 		ContentValues values = new ContentValues();
 		values.put(NAME, contact.getName());
+		values.put(ADRESS, contact.getAdress());
+		values.put(ORGAN, contact.getOrgan());
 		values.put(ROLE, contact.getRole());
 		values.put(PHONE, contact.getPhone());
-	//	values.put(EMAIL, contact.getEmail());
 		values.put(COMMENT, contact.getComment());
 		db.insert(TABLE_CONTACTS, null, values);
 		db.close();
@@ -182,9 +186,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				ContactData contact = new ContactData();
 				contact.setID(Integer.parseInt(cursor.getString(0)));
 				contact.setName(cursor.getString(1));
-				contact.setRole(cursor.getString(2));
-				contact.setPhone(cursor.getString(3));
-				contact.setComment(cursor.getString(4));
+				contact.setAdress(cursor.getString(2));
+				contact.setOrgan(cursor.getString(3));
+				contact.setRole(cursor.getString(4));
+				contact.setPhone(cursor.getString(5));
+				contact.setComment(cursor.getString(6));
 				// Adding contact to list
 				contactList.add(contact);
 			} while (cursor.moveToNext());
@@ -294,7 +300,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	// Deleting single contact
 	public void deleteContact(ContactData contact) {
 		SQLiteDatabase db = this.getWritableDatabase();
-		db.delete(TABLE_CONTACTS, CONTACT_ID +NAME +ROLE +PHONE+COMMENT+ " = ?",
+		db.delete(TABLE_CONTACTS, CONTACT_ID +NAME +ADRESS+ORGAN+ROLE +PHONE+COMMENT+ " = ?",
 				new String[] { String.valueOf(contact.getID()) });
 		db.close();
 	}

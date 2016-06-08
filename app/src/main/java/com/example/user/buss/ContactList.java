@@ -17,7 +17,7 @@ public class ContactList extends Activity implements View.OnClickListener{
     ListView lview;
     ContactListAdapter lviewAdapter;
     DatabaseHandler db = new DatabaseHandler(this);
-    ArrayList<String> fullnameA, roleA, phoneA, emailA, commentA;
+    ArrayList<String> fullnameA, adressA, organA, roleA, phoneA,  commentA;
     private TextView txtTitle;
     private ImageButton btnBack;
 
@@ -28,25 +28,30 @@ public class ContactList extends Activity implements View.OnClickListener{
 
         List<ContactData> contacts = db.getAllContacts();
         fullnameA = new ArrayList<String>();
+        adressA = new ArrayList<String>();
+        organA = new ArrayList<String>();
         roleA = new ArrayList<String>();
         phoneA = new ArrayList<String>();
-        emailA = new ArrayList<String>();
         commentA = new ArrayList<String>();
         for(ContactData cn : contacts){
             String a = cn.getName();
             fullnameA.add(a);
-            String b = cn.getRole();
-            roleA.add(b);
-            String c = cn.getPhone();
-            phoneA.add(c);
-            String d = cn.getComment();
-            commentA.add(d);
+            String b = cn.getAdress();
+            adressA.add(b);
+            String c = cn.getOrgan();
+            organA.add(c);
+            String d = cn.getRole();
+            roleA.add(d);
+            String e = cn.getPhone();
+            phoneA.add(e);
+            String f = cn.getComment();
+            commentA.add(f);
         }
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         txtTitle.setText(getString(R.string.listcon));
 
            lview = (ListView) findViewById(R.id.listView2);
-           lviewAdapter = new ContactListAdapter(this, fullnameA, roleA, phoneA,  commentA);
+           lviewAdapter = new ContactListAdapter(this, fullnameA, adressA, organA, roleA, phoneA,  commentA);
            lview.setAdapter(lviewAdapter);
 
 

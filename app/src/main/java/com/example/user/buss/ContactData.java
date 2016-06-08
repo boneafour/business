@@ -5,6 +5,8 @@ public class ContactData {
 	//private variables
 	int _id;
 	String _name;
+	String _adress;
+	String _organ;
 	String _role;
 	String _phone;
 	String _comment;
@@ -16,8 +18,10 @@ public class ContactData {
 
 	
 	// constructor
-	public ContactData(String name, String _role, String _phone, String _comment){
+	public ContactData(String name, String _adress, String _organ, String _role, String _phone, String _comment){
 		this._name = name;
+		this._role = _adress;
+		this._name = _organ;
 		this._role = _role;
 		this._phone = _phone;
 		this._comment = _comment;
@@ -35,6 +39,21 @@ public class ContactData {
 	}
 	public void setName(String name){
 		this._name = name;
+	}
+
+
+	public String getAdress(){
+		return this._adress;
+	}
+	public void setAdress(String _adress){
+		this._adress = _adress;
+	}
+
+	public String getOrgan(){
+		return this._organ;
+	}
+	public void setOrgan(String _organ){
+		this._organ = _organ;
 	}
 
 	public String getRole(){

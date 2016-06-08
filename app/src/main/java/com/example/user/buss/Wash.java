@@ -75,12 +75,10 @@ public class Wash extends Activity implements View.OnClickListener, MultiSelecti
 			case R.id.loginButton:
 				ListS = ""+list.getSelectedItem().toString();
 				DataS = ""+Data.getText();
-				Data.setText("");
 				TimeS = ""+timeSpinner.getSelectedItem().toString();
 				ResS = res.getSelectedItem().toString();
 				TypeS = works.getSelectedItem().toString();
 				CommentS = ""+comment.getText();
-				comment.setText("");
 				EMAIL = (ListS+" Дата: "+DataS+" Время: "+TimeS+" Ответственный: "+ResS+" Комментарий: "+CommentS+" ");
 				db.addWash(new WashData(ListS, DataS, TimeS, ResS, TypeS, CommentS));
 				List<WashData> washs = db.getAllWash();

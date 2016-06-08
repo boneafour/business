@@ -84,7 +84,7 @@ public class Cook extends Activity implements View.OnClickListener,MultiSelectio
 				foodSt = food.getSelectedItem().toString();
 				resSt = res.getSelectedItem().toString();
 				vegetablesSt = vegetables.getSelectedItem().toString();
-				comment.setText("");
+				commentSt = ""+comment.getText();
 				EMAIL = ("Название блюдо: "+dishName+" Дата: "+date+" Время: "+timeSt+" на  "+foodSt+" Ответственный: "+resSt+" Нужен: "+vegetablesSt+" Комментарий: "+commentSt+" ");
 				db.addCookL(new CookData(dishName, date, timeSt, foodSt, resSt, vegetablesSt, commentSt));
 				List<CookData> cookBaseList = db.getAllCook();

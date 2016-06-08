@@ -71,10 +71,10 @@ public class Contact extends Activity implements View.OnClickListener {
 
 
 				DatabaseHandler db = new DatabaseHandler(this);
-				db.addContact(new ContactData(fullNameS, RoleS, PhoneS, CommentS));
+				db.addContact(new ContactData(fullNameS, AdressS, OrganS, RoleS, PhoneS, CommentS));
 				List<ContactData> contacts = db.getAllContacts();
 				for (ContactData cn : contacts) {
-					String log = "Id: "+cn.getID()+" ,Name: " + cn.getName() + " ,Role: " + cn.getRole()+" ,Phone: " + cn.getPhone()+" ,Comment: " + cn.getComment();
+					String log = "Id: "+cn.getID()+" ,Name: " + cn.getName() + " ,Adress: " + cn.getAdress()+" ,Organ: " + cn.getOrgan()+" ,Role: " + cn.getRole()+" ,Phone: " + cn.getPhone()+" ,Comment: " + cn.getComment();
 					// Writing Contacts to log
 					Log.d("Name: ", log);
 

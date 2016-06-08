@@ -13,15 +13,19 @@ public class ContactListAdapter extends BaseAdapter implements View.OnClickListe
 {
     Activity context;
     ArrayList<String> name;
+    ArrayList<String> adress;
+    ArrayList<String> organ;
     ArrayList<String> role;
     ArrayList<String> phone;
     ArrayList<String> comment;
 
 
-    public ContactListAdapter(Activity context, ArrayList<String> name, ArrayList<String> role, ArrayList<String> phone, ArrayList<String> comment) {
+    public ContactListAdapter(Activity context, ArrayList<String> name, ArrayList<String> adress, ArrayList<String> organ, ArrayList<String> role, ArrayList<String> phone, ArrayList<String> comment) {
         super();
         this.context = context;
         this.name = name;
+        this.adress = adress;
+        this.organ = organ;
         this.role = role;
         this.phone = phone;
         this.comment = comment;
@@ -48,8 +52,7 @@ public class ContactListAdapter extends BaseAdapter implements View.OnClickListe
     }
 
     private class ViewHolder {
-        TextView txtViewName, txtViewRole, txtViewPhone,  txtViewComment;
-        TextView txtViewDescription;
+        TextView txtViewName, txtViewAdress, txtViewOrgan, txtViewRole, txtViewPhone,  txtViewComment;
     }
 
     public View getView(int position, View convertView, ViewGroup parent)
@@ -63,6 +66,8 @@ public class ContactListAdapter extends BaseAdapter implements View.OnClickListe
             convertView = inflater.inflate(R.layout.activity_contact_list, null);
             holder = new ViewHolder();
             holder.txtViewName = (TextView) convertView.findViewById(R.id.name);
+            holder.txtViewAdress = (TextView) convertView.findViewById(R.id.adress);
+            holder.txtViewOrgan = (TextView) convertView.findViewById(R.id.organ);
             holder.txtViewRole = (TextView) convertView.findViewById(R.id.role);
             holder.txtViewPhone = (TextView) convertView.findViewById(R.id.phone);
             holder.txtViewComment = (TextView) convertView.findViewById(R.id.comment);
@@ -75,6 +80,8 @@ public class ContactListAdapter extends BaseAdapter implements View.OnClickListe
         }
 
         holder.txtViewName.setText(name.get(position));
+        holder.txtViewAdress.setText(adress.get(position));
+        holder.txtViewOrgan.setText(organ.get(position));
         holder.txtViewRole.setText(role.get(position));
         holder.txtViewPhone.setText(phone.get(position));
         holder.txtViewComment.setText(comment.get(position));
