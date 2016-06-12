@@ -37,9 +37,9 @@ public class WashData {
 	}
 
 	public String getWashRole(){
-		return this._date;
+		return this._role;
 	}
-	public void setWashRole(String _date){this._date = _date;}
+	public void setWashRole(String _role){this._role = _role;}
 
 	public String getWashColor(){
 		return this._color;

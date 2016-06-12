@@ -44,9 +44,9 @@ public class CookData {
 	public void setCookBreakfast(String _breakfast){this._breakfast = _breakfast;}
 
 	public String getCookRole(){
-		return this._date;
+		return this._role;
 	}
-	public void setCookRole(String _date){this._date = _date;}
+	public void setCookRole(String _role){this._role = _role;}
 
 	public String getCookVega(){
 		return this._vegetable;

@@ -9,13 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Autorization extends AppCompatActivity implements View.OnClickListener {
 
     private TextView txtTitle;
-    Spinner type;
+    Spinner typeS;
     EditText Login, Parol;
-    String typeS, a="админ", b="клиент";
+    String type, a="админ", b="клиент", loginS, parolS;
+    TextView errorMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +27,7 @@ public class Autorization extends AppCompatActivity implements View.OnClickListe
 
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         txtTitle.setText(getString(R.string.app_name));
-        type = (Spinner) findViewById(R.id.type);
+        typeS = (Spinner) findViewById(R.id.type);
         Login = (EditText) findViewById(R.id.login);
         Parol = (EditText) findViewById(R.id.parol);
         Button loginButton = (Button) findViewById(R.id.loginButton);
@@ -37,10 +39,24 @@ public class Autorization extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.loginButton:
-                typeS=type.getSelectedItem().toString();
-                  Intent intent=new Intent(this,MainActivity.class);
-                intent.putExtra("typeS", typeS);
-                startActivity(intent);
+                loginS = Login.getText().toString();
+                parolS = Parol.getText().toString();
+                type=typeS.getSelectedItem().toString();
+                if(type.equals(a) && loginS.equals("admin") && parolS.equals("12345")){
+                    Intent intent=new Intent(this,MainActivity.class);
+                    startActivity(intent);
+                }
+                else if(type.equals(b)){
+                    Intent intent=new Intent(this,MainActivity1.class);
+                    startActivity(intent);
+                }
+                else if(type.equals(a) && (loginS.equals("") || parolS.equals(""))){
+                    Toast.makeText(Autorization.this, "Напишите логин и пароль!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(Autorization.this, "Логин или пароль неверный!", Toast.LENGTH_SHORT).show();
+                }
+
                 break;
         }
     }

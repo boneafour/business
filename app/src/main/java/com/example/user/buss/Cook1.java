@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Cook extends Activity implements View.OnClickListener,MultiSelectionSpinner.OnMultipleItemsSelectedListener {
+public class Cook1 extends Activity implements View.OnClickListener,MultiSelectionSpinner.OnMultipleItemsSelectedListener {
 
 	private TextView txtTitle;
 	private ImageButton btnBack;
@@ -90,7 +90,7 @@ public class Cook extends Activity implements View.OnClickListener,MultiSelectio
 					String log = "Id: "+cn.getCookID()+" ,ListCook: " + cn.getCookList() + " ,CookDate: " + cn.getCookDate()+" ,CookTime: " + cn.getCookTime()+" ,Breakfast: " + cn.getCookBreakfast()+" ,Role: " + cn.getCookRole()+" ,Vega: " + cn.getCookVega()+" ,Comment: " + cn.getCookComment();
 					Log.d("Name: ", log);
 				}
-				Toast.makeText(Cook.this, "Сохранено", Toast.LENGTH_SHORT).show();
+				Toast.makeText(Cook1.this, "Сохранено", Toast.LENGTH_SHORT).show();
 
 				break;
 			case R.id.send:
@@ -126,7 +126,7 @@ public class Cook extends Activity implements View.OnClickListener,MultiSelectio
 			finish();
 		}
 		catch (android.content.ActivityNotFoundException ex) {
-			Toast.makeText(Cook.this, "Отправлено", Toast.LENGTH_SHORT).show();
+			Toast.makeText(Cook1.this, "Отправлено", Toast.LENGTH_SHORT).show();
 		}
 	}
 

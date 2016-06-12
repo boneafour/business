@@ -14,6 +14,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     <activity
         android:name=".Wash"
         android:screenOrientation="portrait">
@@ -43,6 +44,39 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value=".MainActivity" />
     </activity>
+
+
+        <activity
+            android:name=".Wash1"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity1" />
+        </activity>
+        <activity
+            android:name=".Contact1"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity1" />
+        </activity>
+        <activity
+            android:name=".Clean1"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity1" />
+        </activity>
+
+        <activity
+            android:name=".Cook1"
+            android:screenOrientation="portrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity1" />
+        </activity>
+
+
     <activity
         android:name=".Table"
         android:screenOrientation="portrait">
@@ -61,9 +95,11 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Autorization" />
+        </activity>
+
+        <activity
+            android:name=".MainActivity1"
+            android:screenOrientation="portrait">
         </activity>
 
 

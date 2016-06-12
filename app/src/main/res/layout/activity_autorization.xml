@@ -9,7 +9,6 @@
         android:hint="@string/login"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:inputType="date"
         android:ems="10"
         android:id="@+id/login"
         android:layout_marginTop="102dp"
@@ -26,13 +25,14 @@
     <EditText
         style="@style/myCustomEditText"
         android:hint="@string/parol"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:inputType="date"
         android:ems="10"
         android:id="@+id/parol"
         android:layout_below="@+id/type"
         android:layout_alignStart="@+id/type" />
+
     <Button
         style="@style/myCustomButton"
         android:layout_width="match_parent"
@@ -42,5 +42,7 @@
         android:focusable="false"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/parol" />
+
+
 
 </RelativeLayout>

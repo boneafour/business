@@ -141,21 +141,7 @@ public class Table extends Activity implements View.OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		PopupMenu popup = new PopupMenu(Table.this, lview);
-		popup.getMenuInflater().inflate(R.menu.menu, popup.getMenu());
-
-		//registering popup with OnMenuItemClickListener
-		popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-			public boolean onMenuItemClick(MenuItem item) {
-				Toast.makeText(Table.this,"You Clicked : " + item.getTitle(),Toast.LENGTH_SHORT).show();
-				return true;
-			}
-		});
-
-		popup.show();//showing popup menu
-
-
-		switch (v.getId()) {
+			switch (v.getId()) {
 			case R.id.btnBack:
 				NavUtils.navigateUpFromSameTask(this);
 				break;
